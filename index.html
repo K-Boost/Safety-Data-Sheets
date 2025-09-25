@@ -150,3 +150,24 @@
       <li><a href="https://K-Boost.github.io/Safety-Data-Sheets/TruStripe%20-%20Fastest%20Dry%20Zone.pdf" target="_blank">TruStripe - Fastest Dry Zone</a></li>
       <li><a href="https://K-Boost.github.io/Safety-Data-Sheets/Ultra%20-%20Dish-Detergent.pdf" target="_blank">Ultra - Dish-Detergent</a></li>
       <li><a href="https://K-Boost.github.io/Safety-Data-Sheets
+
+            <script>
+  // DARK MODE TOGGLE
+  const toggleButton = document.getElementById('toggleDarkMode');
+  toggleButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+  });
+
+  // SEARCH FILTER
+  const searchInput = document.getElementById('searchInput');
+  const sdsList = document.getElementById('sdsList');
+  const items = sdsList.getElementsByTagName('li');
+
+  searchInput.addEventListener('input', () => {
+    const query = searchInput.value.toLowerCase();
+    for (let i = 0; i < items.length; i++) {
+      const text = items[i].textContent.toLowerCase();
+      items[i].style.display = text.includes(query) ? '' : 'none';
+    }
+  });
+</script>
