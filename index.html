@@ -4,29 +4,13 @@
   <meta charset="UTF-8">
   <title>Safety Data Sheets (SDS)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg-color: #fcfcfc;
-      --text-color: #1a1a1a;
-      --link-bg: #005a9c;
-      --link-hover: #003f6b;
-    }
-
-    body.dark-mode {
-      --bg-color: #121212;
-      --text-color: #e0e0e0;
-      --link-bg: #1e88e5;
-      --link-hover: #1565c0;
-    }
-
     html, body {
       margin: 0;
       padding: 0;
-      background-color: var(--bg-color);
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      color: var(--text-color);
-      transition: background-color 0.3s ease, color 0.3s ease;
+      background-color: #f4f4f4;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: #333;
     }
 
     .container {
@@ -37,46 +21,14 @@
 
     h1 {
       font-size: 2.5em;
-      color: var(--link-bg);
+      color: #005a9c;
       margin-bottom: 0.2em;
     }
 
     .intro {
       font-size: 1.2em;
       margin-bottom: 2em;
-    }
-
-    .controls {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1.5em;
-      flex-wrap: wrap;
-      gap: 1em;
-    }
-
-    #searchInput {
-      flex: 1;
-      padding: 0.5em;
-      font-size: 1em;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      max-width: 400px;
-    }
-
-    #toggleDarkMode {
-      padding: 0.5em 1em;
-      font-size: 1em;
-      background-color: var(--link-bg);
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: 600;
-    }
-
-    #toggleDarkMode:hover {
-      background-color: var(--link-hover);
+      color: #444;
     }
 
     ul.sds-list {
@@ -90,17 +42,17 @@
 
     ul.sds-list a {
       display: inline-block;
-      background-color: var(--link-bg);
+      background-color: #005a9c;
       color: #fff;
       padding: 0.6em 1.2em;
       border-radius: 5px;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: bold;
       transition: background-color 0.2s ease;
     }
 
     ul.sds-list a:hover {
-      background-color: var(--link-hover);
+      background-color: #003f6b;
     }
 
     @media (max-width: 600px) {
@@ -110,8 +62,9 @@
       .intro {
         font-size: 1em;
       }
-      #searchInput {
-        width: 100%;
+      ul.sds-list a {
+        padding: 0.5em 1em;
+        font-size: 0.95em;
       }
     }
   </style>
@@ -120,15 +73,10 @@
   <div class="container">
     <h1>Safety Data Sheets</h1>
     <p class="intro">
-      This page provides direct access to SDS documents for chemicals and products used in the field. If you've been exposed to a substance or need to verify handling protocols, use the search bar or browse below.
+      This page provides direct access to SDS documents for chemicals and products used in the field. If you've been exposed to a substance or need to verify handling protocols, click below to view the relevant sheet instantly.
     </p>
 
-    <div class="controls">
-      <input type="text" id="searchInput" placeholder="Search SDS by name...">
-      <button id="toggleDarkMode">Toggle Dark Mode</button>
-    </div>
-
-    <ul class="sds-list" id="sdsList">
+    <ul class="sds-list">
       <li><a href="https://K-Boost.github.io/Safety-Data-Sheets/3M%20-%20Super%2077%20Adhesive.pdf" target="_blank">3M - Super 77 Adhesive</a></li>
       <li><a href="https://K-Boost.github.io/Safety-Data-Sheets/Accurate%20Dispersions-Color%20Cast.pdf" target="_blank">Accurate Dispersions - Color Cast</a></li>
       <li><a href="https://K-Boost.github.io/Safety-Data-Sheets/American%20Coatings%20-%2022P.pdf" target="_blank">American Coatings - 22P</a></li>
@@ -149,25 +97,9 @@
       <li><a href="https://K-Boost.github.io/Safety-Data-Sheets/Scotch%20-%20Foam%20Hair%20and%20Body%20Wash.pdf" target="_blank">Scotch - Foam Hair and Body Wash</a></li>
       <li><a href="https://K-Boost.github.io/Safety-Data-Sheets/TruStripe%20-%20Fastest%20Dry%20Zone.pdf" target="_blank">TruStripe - Fastest Dry Zone</a></li>
       <li><a href="https://K-Boost.github.io/Safety-Data-Sheets/Ultra%20-%20Dish-Detergent.pdf" target="_blank">Ultra - Dish-Detergent</a></li>
-      <li><a href="https://K-Boost.github.io/Safety-Data-Sheets
-
-            <script>
-  // DARK MODE TOGGLE
-  const toggleButton = document.getElementById('toggleDarkMode');
-  toggleButton.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-  });
-
-  // SEARCH FILTER
-  const searchInput = document.getElementById('searchInput');
-  const sdsList = document.getElementById('sdsList');
-  const items = sdsList.getElementsByTagName('li');
-
-  searchInput.addEventListener('input', () => {
-    const query = searchInput.value.toLowerCase();
-    for (let i = 0; i < items.length; i++) {
-      const text = items[i].textContent.toLowerCase();
-      items[i].style.display = text.includes(query) ? '' : 'none';
-    }
-  });
-</script>
+      <li><a href="https://K-Boost.github.io/Safety-Data-Sheets/Unilever%20-%20Suave%20Body%20Wash%20(All%203%20Variants).pdf" target="_blank">Unilever - Suave Body Wash (All 3 Variants)</a></li>
+      <li><a href="https://K-Boost.github.io/Safety-Data-Sheets/Windex%20Multisurface.pdf" target="_blank">Windex Multisurface</a></li>
+    </ul>
+  </div>
+</body>
+</html>
